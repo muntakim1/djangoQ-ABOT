@@ -1,0 +1,4 @@
+django
+wikipedia
+transformers
+torch

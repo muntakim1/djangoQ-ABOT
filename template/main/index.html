@@ -1,0 +1,30 @@
+{% extends 'base_index.html' %} {% block title %} Question Answering Bot
+{%endblock title %} {% block content %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-3">This is a Demo Question Answering Bot</h1>
+    <p class="lead">Backed By wikipedia and Transformers</p>
+    <hr class="my-2" />
+    <em>Developed By Muntakimur Rahaman</em>
+  </div>
+  <form action="{%url 'index' %}" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <button class="justify-center align-center" type="submit">Search</button>
+  </form>
+  <div>
+    <p class="inline-block">
+      The answer is:
+      <span id="anwser" class="m-5 alert alert-primary" style="color: #121212"
+        >{{answer}}</span
+      >
+    </p>
+    <p class="inline-block">
+      The prediction score is:
+      <span class="m-5 alert alert-success" style="color: #ff0000"
+        >{{score}}</span
+      >
+    </p>
+  </div>
+</div>
+{% endblock content %}
